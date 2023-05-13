@@ -4,6 +4,13 @@ async function getAllEnvironmentDb() {
     const sql = 'SELECT *FROM environment';
     const result = (await client.query(sql)).rows;
     return result;
-}
+};
 
-module.exports = { getAllEnvironmentDb };
+async function getAllEnvironmentByIdDb(id) {
+    const client = await pool.connect();
+    const sql = 'SELECT * FROM environment';
+    const result = (await client.query(sql)).rows;
+    return result;
+};
+
+module.exports = { getAllEnvironmentDb, getAllEnvironmentByIdDb };
