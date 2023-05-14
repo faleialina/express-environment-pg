@@ -6,7 +6,7 @@ async function getAllEnvironmentDb() {
     return result;
 };
 
-async function getAllEnvironmentByIdDb(id) {
+async function getAllEnvironmentByIdDb() {
     const client = await pool.connect();
     const sql = 'SELECT * FROM environment';
     const result = (await client.query(sql)).rows;
